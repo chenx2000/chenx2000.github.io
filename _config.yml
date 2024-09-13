@@ -24,7 +24,7 @@ author:
   avatar           : "XiChen.jpg"
   name             : "Xi Chen"
   pronouns         : # example: "she/her"  
-  bio              : "Short biography for the left-hand sidebar"
+  bio              : "3-rd year master student in the College of Computer Science, Chongqing University"
   location         : "Chongqing, China"
   employer         : "Chongqing University"
   uri              : # URL
@@ -216,10 +216,10 @@ collections:
     output: true
     permalink: /:collection/:path/
   portfolio:
-    output: False
+    output: true
     permalink: /:collection/:path/
   talks:
-    output: False
+    output: true
     permalink: /:collection/:path/
 
 

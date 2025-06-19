@@ -16,15 +16,13 @@ redirect_from:
 {% assign url = gsDataBaseUrl | append: "google-scholar-stats/gs_data_shieldsio.json" %}
 
 <span class='anchor' id='about-me'></span>
+I am currently a third-year Master's student at the <a href="https://cs.cqu.edu.cn/index.htm" target="_blank">School of Computer Science, Chongqing University</a>, under the supervision of Professor <a href="https://faculty.cqu.edu.cn/luoflyn/zh_CN/index.htm" target="_blank">Fulin Luo</a>. Prior to this, I received my Bachelor's degree from the <a href="https://tmjz.gxu.edu.cn/" target="_blank">School of Civil Engineering and Architecture, Guangxi University</a>.
 
-[//]: # (Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. Suspendisse condimentum, libero vel tempus mattis, risus risus vulputate libero, elementum fermentum mi neque vel nisl. Maecenas facilisis maximus dignissim. Curabitur mattis vulputate dui, tincidunt varius libero luctus eu. Mauris mauris nulla, scelerisque eget massa id, tincidunt congue felis. Sed convallis tempor ipsum rhoncus viverra. Pellentesque nulla orci, accumsan volutpat fringilla vitae, maximus sit amet tortor. Aliquam ultricies odio ut volutpat scelerisque. Donec nisl nisl, porttitor vitae pharetra quis, fringilla sed mi. Fusce pretium dolor ut aliquam consequat. Cras volutpat, tellus accumsan mattis molestie, nisl lacus tempus massa, nec malesuada tortor leo vel quam. Aliquam vel ex consectetur, vehicula leo nec, efficitur eros. Donec convallis non urna quis feugiat.)
+My research interest includes hyperspectral image reconstruction and remote sensing images processing. 
 
-[//]: # ()
-[//]: # (My research interest includes neural machine translation and computer vision. I have published more than 100 papers at the top international AI conferences with total <a href='https://scholar.google.com/citations?user=DhtAFkwAAAAJ'>google scholar citations <strong><span id='total_cit'>260000+</span></strong></a> &#40;You can also use google scholar badge <a href='https://scholar.google.com/citations?user=z5pV7koAAAAJ&hl=zh-CN'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>&#41;.)
 
-[//]: # ()
 
-# 🔥 News
+[//]: # (# 🔥 News)
 
 [//]: # (- *2022.02*: &nbsp;🎉🎉 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. )
 
@@ -54,7 +52,7 @@ redirect_from:
 
 [//]: # (- [Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet]&#40;https://github.com&#41;, A, B, C, **CVPR 2020**)
 
-# 🎖 Honors and Awards
+[//]: # (# 🎖 Honors and Awards)
 
 [//]: # (- *2021.10* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. )
 
@@ -62,9 +60,9 @@ redirect_from:
 
 # 📖 Educations
 
-[//]: # (- *2019.06 - 2022.04 &#40;now&#41;*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. )
+- *2022.09 - 2025.06 (now)*, Master of Engineering in Computer Technology, <a href="https://cs.cqu.edu.cn/index.htm" target="_blank">School of Computer Science, Chongqing University</a>. Supervisor: Prof. <a href="https://faculty.cqu.edu.cn/luoflyn/zh_CN/index.htm" target="_blank">Fulin Luo</a>.
 
-[//]: # (- *2015.09 - 2019.06*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. )
+- *2022.09 - 2025.06*, Bachelor of Engineering in Civil Engineering, <a href="https://cs.cqu.edu.cn/index.htm" target="_blank">School of Computer Science, Chongqing University</a>. 
 
 [//]: # (# 💬 Invited Talks)
 

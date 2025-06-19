@@ -64,7 +64,7 @@ My research interest includes hyperspectral image reconstruction and remote sens
 
 - *2022.09 - 2025.06 (now)*, Master of Engineering in Computer Technology, <a href="https://cs.cqu.edu.cn/index.htm" target="_blank">School of Computer Science, Chongqing University</a>. Supervisor: Prof. <a href="https://faculty.cqu.edu.cn/luoflyn/zh_CN/index.htm" target="_blank">Fulin Luo</a>.
 
-- *2022.09 - 2025.06*, Bachelor of Engineering in Civil Engineering, <a href="https://cs.cqu.edu.cn/index.htm" target="_blank">School of Computer Science, Chongqing University</a>. 
+- *2022.09 - 2025.06*, Bachelor of Engineering in Civil Engineering, <a href="https://tmjz.gxu.edu.cn/" target="_blank">School of Civil Engineering and Architecture, Guangxi University</a>. 
 
 [//]: # (# 💬 Invited Talks)
 

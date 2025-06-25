@@ -18,13 +18,13 @@ redirect_from:
 <span class='anchor' id='about-me'></span>
 I am currently a third-year Master's student at the <a href="https://cs.cqu.edu.cn/index.htm" target="_blank">School of Computer Science, Chongqing University</a>, under the supervision of Professor <a href="https://faculty.cqu.edu.cn/luoflyn/zh_CN/index.htm" target="_blank">Fulin Luo</a>. Prior to this, I received my Bachelor's degree from the <a href="https://tmjz.gxu.edu.cn/" target="_blank">School of Civil Engineering and Architecture, Guangxi University</a>.
 
-My research interest includes hyperspectral image reconstruction and remote sensing images processing. 
+My research interests include hyperspectral image reconstruction, computational imaging, and remote sensing images processing. 
 
 
 
-[//]: # (# 🔥 News)
+# 🔥 News
 
-[//]: # (- *2022.02*: &nbsp;🎉🎉 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. )
+- *2025.04*: &nbsp;🎉🎉 Our paper on hyperspectral image reconstruction is accepted by TIP. 
 
 [//]: # (- *2022.02*: &nbsp;🎉🎉 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. )
 

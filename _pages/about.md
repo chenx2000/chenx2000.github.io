@@ -25,6 +25,7 @@ My research interests include hyperspectral image reconstruction, computational 
 # 🔥 News
 
 - *2025.04*: &nbsp;🎉🎉 Our paper on hyperspectral image reconstruction is accepted by TIP. 
+- *2023.12*: &nbsp;🎉🎉 Our paper on hyperspectral image reconstruction is accepted by AAAI. 
 
 [//]: # (- *2022.02*: &nbsp;🎉🎉 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. )
 
@@ -54,7 +55,7 @@ My research interests include hyperspectral image reconstruction, computational 
 
 [//]: # (- [Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet]&#40;https://github.com&#41;, A, B, C, **CVPR 2020**)
 
-# 🎖 Honors and Awards
+# 🥇 Honors and Awards
 
 - *2022.06* Outstanding Graduate, Guangxi University. 
 
@@ -66,6 +67,13 @@ My research interests include hyperspectral image reconstruction, computational 
 
 - *2022.09 - 2025.06*, Bachelor of Engineering in Civil Engineering, <a href="https://tmjz.gxu.edu.cn/" target="_blank">School of Civil Engineering and Architecture, Guangxi University</a>. 
 
+# ⚖️Academic Services
+Conference Reviewer:
+- International Conference on Machine Learning **(ICML)**: 2025.
+- Conference on Neural Information Processing Systems **(NeurIPS)**: 2024, 2025.
+- International Conference on Learning Representations **(ICLR)**: 2025.
+- AAAI Conference on Artificial Intelligence **(AAAI)**: 2024.
+
 [//]: # (# 💬 Invited Talks)
 
 [//]: # (- *2021.06*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. )
@@ -76,3 +84,4 @@ My research interests include hyperspectral image reconstruction, computational 
 [//]: # (# 💻 Internships)
 
 [//]: # (- *2019.05 - 2020.02*, [Lorem]&#40;https://github.com/&#41;, China.)
+

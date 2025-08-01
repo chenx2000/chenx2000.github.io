@@ -24,6 +24,7 @@ My research interests include hyperspectral image reconstruction, computational 
 
 # 🔥 News
 
+- *2025.07*: &nbsp;🎉🎉 Our paper on hyperspectral image reconstruction is accepted by TCSVT. 
 - *2025.04*: &nbsp;🎉🎉 Our paper on hyperspectral image reconstruction is accepted by TIP. 
 - *2023.12*: &nbsp;🎉🎉 Our paper on hyperspectral image reconstruction is accepted by AAAI. 
 

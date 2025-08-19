@@ -7,7 +7,7 @@
 
 # Site Settings
 title                    : "Xi Chen"
-description              : "A third-year master's student at the School of Computer Science, Chongqing University."
+description              :
 repository               : "chenx2000/chenx2000.github.io"
 google_scholar_stats_use_cdn : true
 
@@ -29,7 +29,7 @@ author:
   pubmed           : 
   googlescholar    : "https://scholar.google.com/citations?user=z5pV7koAAAAJ&hl=zh-CN"
   email            : "chenxi2000cd@gmail.com"
-  researchgate     :  # e.g., "https://www.researchgate.net/profile/yourprofile"
+  researchgate     :  "https://www.researchgate.net/profile/Xi-Chen-758?ev=hdr_xprf&_sg=TtfvT-T5-Uy0-iiztO24pxg1MfDT7wVJk3ghJGG0v6TGhcC4xuAkQuBw7sngeZRg8VS97REak147WsO5eqAAhzlc&_tp=eyJjb250ZXh0Ijp7ImZpcnN0UGFnZSI6ImhvbWUiLCJwYWdlIjoiaG9tZSIsInByZXZpb3VzUGFnZSI6ImxvZ2luIiwicG9zaXRpb24iOiJnbG9iYWxIZWFkZXIifX0"
   uri              :
   bitbucket        :
   codepen          :
@@ -45,7 +45,7 @@ author:
   lastfm           :
   linkedin         : "xi-chen-7b172b313"
   dblp             : # e.g., "https://dblp.org/pid/xx/xxxx.html"
-  orcid            : # e.g., "https://orcid.org/xxxx"
+  orcid            : "https://orcid.org/0009-0001-7867-5177"
   pinterest        :
   soundcloud       :
   stackoverflow    : # http://stackoverflow.com/users/123456/username

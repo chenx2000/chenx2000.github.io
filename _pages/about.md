@@ -16,7 +16,7 @@ redirect_from:
 {% assign url = gsDataBaseUrl | append: "google-scholar-stats/gs_data_shieldsio.json" %}
 
 <span class='anchor' id='about-me'></span>
-I am currently a third-year Master's student at the <a href="https://cs.cqu.edu.cn/index.htm" target="_blank">School of Computer Science, Chongqing University</a>, under the supervision of Professor <a href="https://faculty.cqu.edu.cn/luoflyn/zh_CN/index.htm" target="_blank">Fulin Luo</a>. Prior to this, I received my Bachelor's degree from the <a href="https://tmjz.gxu.edu.cn/" target="_blank">School of Civil Engineering and Architecture, Guangxi University</a>.
+I received my Master's degree at the <a href="https://cs.cqu.edu.cn/index.htm" target="_blank">College of Computer Science, Chongqing University</a> in Jun. 2025, under the supervision of Professor <a href="https://faculty.cqu.edu.cn/luoflyn/zh_CN/index.htm" target="_blank">Fulin Luo</a>. Prior to this, I received my Bachelor's degree from the <a href="https://tmjz.gxu.edu.cn/" target="_blank">School of Civil Engineering and Architecture, Guangxi University</a>.
 
 My research interests include hyperspectral image reconstruction, computational imaging, and remote sensing images processing. 
 
@@ -64,7 +64,7 @@ My research interests include hyperspectral image reconstruction, computational 
 
 # 📖 Educations
 
-- *2022.09 - 2025.06 (now)*, Master of Engineering in Computer Technology, <a href="https://cs.cqu.edu.cn/index.htm" target="_blank">School of Computer Science, Chongqing University</a>. Supervisor: Prof. <a href="https://faculty.cqu.edu.cn/luoflyn/zh_CN/index.htm" target="_blank">Fulin Luo</a>.
+- *2022.09 - 2025.06 (now)*, Master of Engineering in Computer Technology, <a href="https://cs.cqu.edu.cn/index.htm" target="_blank">College of Computer Science, Chongqing University</a>. Supervisor: Prof. <a href="https://faculty.cqu.edu.cn/luoflyn/zh_CN/index.htm" target="_blank">Fulin Luo</a>.
 
 - *2022.09 - 2025.06*, Bachelor of Engineering in Civil Engineering, <a href="https://tmjz.gxu.edu.cn/" target="_blank">School of Civil Engineering and Architecture, Guangxi University</a>. 
 

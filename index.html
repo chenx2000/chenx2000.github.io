@@ -1,0 +1,1015 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Xi Chen — 陈曦</title>
+<link rel="icon" href="images/favicon.ico" />
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+<meta name="description" content="Xi Chen (陈曦) — researcher in hyperspectral image reconstruction, computational imaging, and remote sensing." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  /* ========== TWEAKABLE DEFAULTS ========== */
+  :root {
+    --paper: #f6f1e7;
+    --paper-2: #efe8d8;
+    --ink: #1f1a15;
+    --ink-soft: #4a4238;
+    --ink-mute: #8b8273;
+    --rule: #d9cfbc;
+    --accent: #9a3a2e;        /* terracotta — book binding */
+    --accent-soft: #c96b5d;
+    --shadow: 0 1px 0 rgba(0,0,0,.04);
+
+    --serif: "EB Garamond", "Source Serif Pro", Georgia, serif;
+    --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+    --max: 1180px;
+  }
+  html[data-theme="dark"] {
+    --paper: #1a1714;
+    --paper-2: #221e19;
+    --ink: #f1ebdd;
+    --ink-soft: #c9c0ad;
+    --ink-mute: #857d6d;
+    --rule: #3a342b;
+    --accent: #e28370;
+    --accent-soft: #f0a998;
+  }
+  html[data-palette="indigo"] { --accent: #2f4a7a; --accent-soft: #6a86b8; }
+  html[data-palette="forest"] { --accent: #3d5a3a; --accent-soft: #6a8466; }
+  html[data-palette="ink"]    { --accent: #1f1a15; --accent-soft: #4a4238; }
+  html[data-palette="plum"]   { --accent: #5a3658; --accent-soft: #8d6389; }
+
+  html[data-type="modern"] {
+    --serif: "Inter", sans-serif;
+  }
+  html[data-type="mono"] {
+    --serif: "JetBrains Mono", monospace;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--serif);
+    font-size: 19px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    transition: background .3s ease, color .3s ease;
+  }
+
+  ::selection { background: var(--accent); color: var(--paper); }
+
+  a {
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--rule);
+    transition: border-color .2s, color .2s;
+  }
+  a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+
+  /* ========== HEADER / NAV ========== */
+  .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: color-mix(in srgb, var(--paper) 92%, transparent);
+    backdrop-filter: saturate(140%) blur(10px);
+    -webkit-backdrop-filter: saturate(140%) blur(10px);
+    border-bottom: 1px solid var(--rule);
+  }
+  .topbar-inner {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 14px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  .brand {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 18px;
+    letter-spacing: .01em;
+    border: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .brand em {
+    font-style: italic;
+    color: var(--ink-mute);
+    font-weight: 400;
+  }
+  .nav {
+    display: flex;
+    gap: 22px;
+    font-family: var(--sans);
+    font-size: 13px;
+    letter-spacing: .04em;
+  }
+  .nav a {
+    border: none;
+    color: var(--ink-soft);
+    text-transform: uppercase;
+  }
+  .nav a:hover { color: var(--accent); }
+  .tools {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+  }
+  .tool-btn {
+    border: 1px solid var(--rule);
+    background: transparent;
+    color: var(--ink-soft);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-family: var(--sans);
+    font-size: 12px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .2s;
+  }
+  .tool-btn:hover { border-color: var(--accent); color: var(--accent); }
+  .tool-btn svg { width: 14px; height: 14px; }
+
+  /* ========== HERO ========== */
+  .wrap {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  .hero {
+    padding: 70px 0 40px;
+    display: grid;
+    grid-template-columns: 1fr 240px;
+    gap: 64px;
+    align-items: start;
+  }
+  .hero-text .eyebrow {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--ink-mute);
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .hero-text h1 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: clamp(40px, 5vw, 60px);
+    line-height: 1.05;
+    letter-spacing: -.01em;
+    margin: 0 0 20px;
+  }
+  .hero-text h1 .zh {
+    font-weight: 400;
+    color: var(--ink-mute);
+    font-style: italic;
+    font-size: .75em;
+    margin-left: 12px;
+    letter-spacing: .02em;
+  }
+  .hero-text p.intro {
+    font-size: 18px;
+    color: var(--ink-soft);
+    max-width: 60ch;
+    margin: 0 0 14px;
+    text-wrap: pretty;
+  }
+  .hero-text p.intro a {
+    color: var(--ink);
+    border-bottom: 1px solid var(--accent-soft);
+  }
+  .hero-text p.intro a:hover {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+  }
+
+  /* photo card */
+  .card {
+    position: sticky;
+    top: 90px;
+  }
+  .portrait {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1;
+    overflow: hidden;
+    border-radius: 50%;
+    background: var(--paper-2);
+    box-shadow: 0 2px 18px rgba(0,0,0,.06);
+  }
+  .portrait::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    box-shadow: inset 0 0 0 1px rgba(0,0,0,.06);
+    pointer-events: none;
+  }
+  .portrait img { width: 100%; height: 100%; object-fit: cover; display: block; filter: saturate(.95); }
+
+  .contact {
+    margin-top: 20px;
+    font-family: var(--sans);
+    font-size: 13px;
+    color: var(--ink-soft);
+    line-height: 1.9;
+  }
+  .contact .label {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    color: var(--ink-mute);
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    display: inline-block;
+    width: 64px;
+  }
+  .contact a { border-bottom: none; color: var(--ink-soft); }
+  .contact a:hover { color: var(--accent); }
+
+  .links-row {
+    margin-top: 18px;
+    padding-top: 18px;
+    border-top: 1px solid var(--rule);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    font-family: var(--sans);
+    font-size: 12.5px;
+  }
+  .links-row a {
+    border: none;
+    color: var(--ink-soft);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .links-row a:hover { color: var(--accent); }
+  .links-row svg { width: 14px; height: 14px; }
+
+  /* ========== SECTIONS ========== */
+  section.block {
+    padding: 44px 0;
+    border-top: 1px solid var(--rule);
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 60px;
+    align-items: start;
+  }
+  section.block > header {
+    position: sticky;
+    top: 90px;
+  }
+  section.block > header .num {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--ink-mute);
+    letter-spacing: .15em;
+    display: block;
+    margin-bottom: 8px;
+  }
+  section.block > header h2 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 28px;
+    margin: 0;
+    letter-spacing: -.01em;
+  }
+  section.block > header h2 em {
+    display: block;
+    font-style: italic;
+    color: var(--ink-mute);
+    font-size: 15px;
+    font-weight: 400;
+    margin-top: 4px;
+    letter-spacing: 0;
+  }
+
+  /* News */
+  .news { display: flex; flex-direction: column; gap: 14px; }
+  .news-item {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 20px;
+    align-items: baseline;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .news-item:last-child { border-bottom: none; }
+  .news-date {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--ink-mute);
+    letter-spacing: .03em;
+  }
+  .news-body { font-size: 18px; color: var(--ink-soft); line-height: 1.55; }
+  .news-body .tag {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 10.5px;
+    padding: 1px 7px;
+    border: 1px solid var(--accent-soft);
+    color: var(--accent);
+    border-radius: 3px;
+    margin-right: 8px;
+    letter-spacing: .04em;
+    vertical-align: 2px;
+  }
+
+  /* Publications */
+  .pubs { display: flex; flex-direction: column; gap: 28px; }
+  .pub {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 24px;
+    align-items: start;
+  }
+  .pub-venue {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--ink-mute);
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    padding-top: 4px;
+  }
+  .pub-venue .year {
+    display: block;
+    font-size: 22px;
+    font-family: var(--serif);
+    color: var(--ink);
+    text-transform: none;
+    letter-spacing: -.01em;
+    margin-top: 4px;
+  }
+  .pub-body h3 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 22px;
+    margin: 0 0 14px;
+    line-height: 1.3;
+    letter-spacing: -.005em;
+  }
+  .pub-body h3 a { border: none; }
+  .pub-body h3 a:hover { color: var(--accent); }
+  .pub-authors {
+    font-family: var(--sans);
+    font-size: 14px;
+    color: var(--ink-soft);
+    margin-bottom: 8px;
+  }
+  .pub-authors .me {
+    font-weight: 600;
+    color: var(--ink);
+    border-bottom: 1px solid var(--accent-soft);
+  }
+  .pub-meta {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 15px;
+    color: var(--ink-mute);
+    margin-bottom: 14px;
+  }
+  .pub-links {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .pub-link {
+    font-family: var(--sans);
+    font-size: 12px;
+    padding: 3px 10px;
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    color: var(--ink-soft);
+    letter-spacing: .02em;
+    cursor: pointer;
+    background: transparent;
+  }
+  .pub-link:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* Timeline (education/experience) */
+  .timeline { position: relative; }
+  .tl-item {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 24px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .tl-item:last-child { border-bottom: none; padding-bottom: 0; margin-bottom: 0; }
+  .tl-date {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--ink-mute);
+    letter-spacing: .03em;
+    padding-top: 4px;
+  }
+  .tl-body h3 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 20px;
+    margin: 0 0 4px;
+    letter-spacing: -.005em;
+  }
+  .tl-body .institution {
+    font-family: var(--serif);
+    font-style: italic;
+    color: var(--ink-mute);
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+  .tl-body p {
+    font-size: 16px;
+    color: var(--ink-soft);
+    margin: 6px 0 0;
+  }
+
+  /* Services grid */
+  .svc { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+  .svc h3 {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--ink-mute);
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    margin: 0 0 14px;
+  }
+  .svc ul { list-style: none; padding: 0; margin: 0; }
+  .svc li {
+    padding: 8px 0;
+    font-size: 16px;
+    color: var(--ink-soft);
+    border-bottom: 1px dotted var(--rule);
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .svc li:last-child { border-bottom: none; }
+  .svc .conf {
+    font-family: var(--serif);
+    font-weight: 500;
+    color: var(--ink);
+  }
+  .svc .years {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--ink-mute);
+    white-space: nowrap;
+  }
+
+  /* Footer */
+  footer {
+    margin-top: 80px;
+    padding: 40px 0 60px;
+    border-top: 1px solid var(--rule);
+    font-family: var(--sans);
+    font-size: 12px;
+    color: var(--ink-mute);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  footer a { border: none; color: var(--ink-mute); }
+  footer a:hover { color: var(--accent); }
+
+  /* Scroll reveal */
+  .reveal {
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity .7s ease, transform .7s ease;
+  }
+  .reveal.in {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* ========== Tweaks panel ========== */
+  #tweaks {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 300px;
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 16px 18px;
+    font-family: var(--sans);
+    font-size: 13px;
+    box-shadow: 0 10px 40px rgba(0,0,0,.08);
+    z-index: 100;
+    display: none;
+  }
+  #tweaks.open { display: block; }
+  #tweaks h4 {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    margin: 0 0 12px;
+    display: flex;
+    justify-content: space-between;
+  }
+  #tweaks .row { margin-bottom: 14px; }
+  #tweaks .row:last-child { margin-bottom: 0; }
+  #tweaks label {
+    display: block;
+    font-size: 11px;
+    color: var(--ink-mute);
+    margin-bottom: 6px;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+  }
+  #tweaks .opts { display: flex; gap: 6px; flex-wrap: wrap; }
+  #tweaks .opt {
+    flex: 1;
+    min-width: 0;
+    padding: 6px 8px;
+    border: 1px solid var(--rule);
+    background: transparent;
+    color: var(--ink-soft);
+    font-family: var(--sans);
+    font-size: 12px;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: all .15s;
+  }
+  #tweaks .opt:hover { color: var(--accent); }
+  #tweaks .opt.on { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+  #tweaks .swatch {
+    width: 26px; height: 26px; border-radius: 50%; padding: 0;
+    border: 2px solid transparent;
+    flex: 0 0 auto;
+  }
+  #tweaks .swatch.on { border-color: var(--ink); }
+
+  /* Mobile */
+  @media (max-width: 820px) {
+    .hero { grid-template-columns: 1fr; gap: 40px; padding: 56px 0 30px; }
+    .card { position: static; max-width: 280px; }
+    section.block { grid-template-columns: 1fr; gap: 24px; padding: 44px 0; }
+    section.block > header { position: static; }
+    .pub { grid-template-columns: 1fr; gap: 8px; }
+    .pub-venue .year { display: inline; margin-left: 8px; }
+    .tl-item { grid-template-columns: 1fr; gap: 6px; }
+    .svc { grid-template-columns: 1fr; gap: 28px; }
+    .news-item { grid-template-columns: 1fr; gap: 4px; }
+    .wrap, .topbar-inner { padding-left: 22px; padding-right: 22px; }
+    .nav { display: none; }
+    body { font-size: 17px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============================================== -->
+<!-- TOP BAR                                         -->
+<!-- ============================================== -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <a href="#top" class="brand">Xi&nbsp;Chen</a>
+    <nav class="nav">
+      <a href="#about">About</a>
+      <a href="#news">News</a>
+      <a href="#publications">Work</a>
+      <a href="#experience">Experience</a>
+      <a href="#services">Service</a>
+    </nav>
+    <div class="tools">
+      <button class="tool-btn" id="lang-btn" title="Language" aria-label="Toggle language">EN</button>
+      <button class="tool-btn" id="theme-btn" title="Toggle theme" aria-label="Toggle theme">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      </button>
+      <button class="tool-btn" id="tweak-btn" title="Tweaks" aria-label="Tweaks">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h.01a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v.01a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+      </button>
+    </div>
+  </div>
+</div>
+
+<div id="top" class="wrap">
+
+<!-- ============================================== -->
+<!-- HERO                                            -->
+<!-- ============================================== -->
+<section class="hero" id="about">
+  <div class="hero-text">
+    <div class="eyebrow" data-i18n-en="Researcher · Computer Vision" data-i18n-zh="研究者 · 计算机视觉">Researcher · Computer Vision</div>
+    <h1>Xi Chen</h1>
+    <p class="intro" data-i18n-en-html='I received my Master’s degree from the <a href="https://cs.cqu.edu.cn/index.htm" target="_blank" rel="noopener">College of Computer Science, Chongqing University</a> in June 2025, advised by Prof. <a href="https://scholar.google.com/citations?user=TICo9iQAAAAJ&hl=zh-CN" target="_blank" rel="noopener">Fulin Luo</a>. Prior to that, I earned my Bachelor’s degree from the <a href="https://tmjz.gxu.edu.cn/" target="_blank" rel="noopener">School of Civil Engineering and Architecture, Guangxi University</a>.' data-i18n-zh-html='我于 2025 年 6 月在<a href="https://cs.cqu.edu.cn/index.htm" target="_blank" rel="noopener">重庆大学计算机学院</a>获得硕士学位，导师为<a href="https://scholar.google.com/citations?user=TICo9iQAAAAJ&hl=zh-CN" target="_blank" rel="noopener">罗甫林教授</a>。此前，我在<a href="https://tmjz.gxu.edu.cn/" target="_blank" rel="noopener">广西大学土木建筑工程学院</a>获得学士学位。'>
+      I received my Master’s degree from the <a href="https://cs.cqu.edu.cn/index.htm" target="_blank" rel="noopener">College of Computer Science, Chongqing University</a> in June 2025, advised by Prof. <a href="https://scholar.google.com/citations?user=TICo9iQAAAAJ&hl=zh-CN" target="_blank" rel="noopener">Fulin Luo</a>. Prior to that, I earned my Bachelor’s degree from the <a href="https://tmjz.gxu.edu.cn/" target="_blank" rel="noopener">School of Civil Engineering and Architecture, Guangxi University</a>.
+    </p>
+    <p class="intro" data-i18n-en="My research centres on computer vision, inverse problems, and remote sensing." data-i18n-zh="我的研究方向包括计算机视觉、逆问题与遥感图像处理。">
+      My research centres on computer vision, inverse problems, and remote sensing.
+    </p>
+  </div>
+
+  <aside class="card">
+    <div class="portrait">
+      <img src="images/XiChen-new.jpg" alt="Portrait of Xi Chen" />
+    </div>
+    <div class="contact">
+      <div><span class="label">Email</span><a href="mailto:chenxi2000cd@gmail.com">chenxi2000cd@gmail.com</a></div>
+      <div><span class="label">Based</span>Chongqing, China</div>
+    </div>
+    <div class="links-row">
+      <a href="https://scholar.google.com/citations?user=z5pV7koAAAAJ&hl=zh-CN" target="_blank" rel="noopener" title="Google Scholar">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3 1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/></svg>
+        Scholar
+      </a>
+      <a href="https://github.com/chenx2000" target="_blank" rel="noopener" title="GitHub">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.86 10.92c.58.11.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.17.08 1.78 1.2 1.78 1.2 1.04 1.78 2.72 1.27 3.38.97.1-.75.41-1.27.74-1.56-2.56-.29-5.25-1.28-5.25-5.69 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.04 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.78 0c2.21-1.49 3.18-1.18 3.18-1.18.62 1.58.23 2.75.11 3.04.74.81 1.18 1.84 1.18 3.1 0 4.42-2.69 5.4-5.26 5.68.42.36.79 1.07.79 2.16v3.2c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5z"/></svg>
+        GitHub
+      </a>
+      <a href="https://www.linkedin.com/in/xi-chen-7b172b313" target="_blank" rel="noopener" title="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14C2.24 0 0 2.24 0 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5V5c0-2.76-2.24-5-5-5zM8 19H5V8h3v11zM6.5 6.73A1.73 1.73 0 1 1 6.5 3.27a1.73 1.73 0 0 1 0 3.46zM20 19h-3v-5.6c0-1.34-.03-3.06-1.87-3.06-1.87 0-2.16 1.46-2.16 2.96V19h-3V8h2.88v1.5h.04c.4-.75 1.38-1.54 2.84-1.54 3.04 0 3.6 2 3.6 4.6V19z"/></svg>
+        LinkedIn
+      </a>
+      <a href="https://www.researchgate.net/profile/Xi-Chen-758" target="_blank" rel="noopener" title="ResearchGate">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.586 0H4.414A4.42 4.42 0 0 0 0 4.414v15.172A4.42 4.42 0 0 0 4.414 24h15.172A4.42 4.42 0 0 0 24 19.586V4.414A4.42 4.42 0 0 0 19.586 0zM8.321 15.59a3.04 3.04 0 0 1-3.036-3.03 3.04 3.04 0 0 1 3.036-3.03c.84 0 1.607.34 2.16.895l-.69.69a2.07 2.07 0 1 0 .522 2.182h-1.9v-.975h2.925c.03.126.047.257.047.393 0 1.67-1.365 3.03-3.036 3.03zm9.23-4.87h-.854l-2.14-2.48-.3.35v2.13h-.73V5.4h.73v4.49l2.25-2.55h.86l-2.42 2.78z"/></svg>
+        ResearchGate
+      </a>
+      <a href="https://orcid.org/0009-0001-7867-5177" target="_blank" rel="noopener" title="ORCID">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947 0 .525-.422.947-.947.947a.95.95 0 0 1-.947-.947c0-.516.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.025-5.325 5.025h-3.919V7.416zm1.444 1.303v7.444h2.297c3.272 0 4.022-2.484 4.022-3.722 0-2.016-1.284-3.722-4.097-3.722h-2.222z"/></svg>
+        ORCID
+      </a>
+    </div>
+  </aside>
+</section>
+
+<!-- ============================================== -->
+<!-- NEWS                                            -->
+<!-- ============================================== -->
+<section class="block" id="news">
+  <header>
+    <span class="num">§ 01</span>
+    <h2>News<em data-i18n-en="Recent updates" data-i18n-zh="近期动态">Recent updates</em></h2>
+  </header>
+  <div class="news reveal">
+    <div class="news-item">
+      <div class="news-date">Jul 2025</div>
+      <div class="news-body"><span class="tag">Paper</span><span data-i18n-en="Our paper on hyperspectral image reconstruction is accepted by IEEE TCSVT." data-i18n-zh="我们关于高光谱图像重建的论文被 IEEE TCSVT 接收。">Our paper on hyperspectral image reconstruction is accepted by <em>IEEE TCSVT</em>.</span></div>
+    </div>
+    <div class="news-item">
+      <div class="news-date">Apr 2025</div>
+      <div class="news-body"><span class="tag">Paper</span><span data-i18n-en="Our paper on hyperspectral image reconstruction is accepted by IEEE TIP." data-i18n-zh="我们关于高光谱图像重建的论文被 IEEE TIP 接收。">Our paper on hyperspectral image reconstruction is accepted by <em>IEEE TIP</em>.</span></div>
+    </div>
+    <div class="news-item">
+      <div class="news-date">Dec 2023</div>
+      <div class="news-body"><span class="tag">Paper</span><span data-i18n-en="Our paper on hyperspectral image reconstruction is accepted by AAAI 2024." data-i18n-zh="我们关于高光谱图像重建的论文被 AAAI 2024 接收。">Our paper on hyperspectral image reconstruction is accepted by <em>AAAI 2024</em>.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================== -->
+<!-- PUBLICATIONS                                    -->
+<!-- ============================================== -->
+<section class="block" id="publications">
+  <header>
+    <span class="num">§ 02</span>
+    <h2 data-i18n-en="Publications" data-i18n-zh="论文发表">Publications<em data-i18n-en="Peer-reviewed work" data-i18n-zh="同行评审">Peer-reviewed work</em></h2>
+  </header>
+  <div class="pubs reveal">
+
+    <article class="pub">
+      <div class="pub-venue">IEEE TCSVT<span class="year">2025</span></div>
+      <div class="pub-body">
+        <h3><a href="https://ieeexplore.ieee.org/abstract/document/11121894" target="_blank" rel="noopener">HDiff-HIR: Hierarchically Conditional Diffusion Model for Hyperspectral Image Reconstruction</a></h3>
+        <div class="pub-authors">Fulin Luo, <span class="me">Xi Chen</span>, Chuan Fu, Tan Guo, Bo Du</div>
+        <div class="pub-meta"><em>IEEE Transactions on Circuits and Systems for Video Technology</em>, 2025.</div>
+        <div class="pub-links">
+          <a class="pub-link" href="https://ieeexplore.ieee.org/abstract/document/11121894" target="_blank" rel="noopener">Paper</a>
+          <a class="pub-link" href="https://github.com/chenx2000/HDiff-HIR" target="_blank" rel="noopener">Code</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="pub">
+      <div class="pub-venue">IEEE TIP<span class="year">2025</span></div>
+      <div class="pub-body">
+        <h3><a href="https://ieeexplore.ieee.org/abstract/document/10955125/" target="_blank" rel="noopener">DSMT: Dual-Stage Multiscale Transformer for Hyperspectral Snapshot Compressive Imaging</a></h3>
+        <div class="pub-authors">Fulin Luo, <span class="me">Xi Chen</span>, Tan Guo, Xiuwen Gong, Lefei Zhang, Ce Zhu</div>
+        <div class="pub-meta"><em>IEEE Transactions on Image Processing</em>, 2025.</div>
+        <div class="pub-links">
+          <a class="pub-link" href="https://ieeexplore.ieee.org/abstract/document/10955125/" target="_blank" rel="noopener">Paper</a>
+          <a class="pub-link" href="https://github.com/chenx2000/DSMT-main" target="_blank" rel="noopener">Code</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="pub">
+      <div class="pub-venue">AAAI<span class="year">2024</span></div>
+      <div class="pub-body">
+        <h3><a href="https://ojs.aaai.org/index.php/AAAI/article/view/28190" target="_blank" rel="noopener">Dual-Window Multiscale Transformer for Hyperspectral Snapshot Compressive Imaging</a></h3>
+        <div class="pub-authors">Fulin Luo, <span class="me">Xi Chen</span>, Xiuwen Gong, Weiwen Wu, Tan Guo</div>
+        <div class="pub-meta"><em>Proceedings of the AAAI Conference on Artificial Intelligence</em>, 2024.</div>
+        <div class="pub-links">
+          <a class="pub-link" href="https://ojs.aaai.org/index.php/AAAI/article/view/28190" target="_blank" rel="noopener">Paper</a>
+          <a class="pub-link" href="https://github.com/chenx2000/DWMT-main" target="_blank" rel="noopener">Code</a>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ============================================== -->
+<!-- EXPERIENCE (Work + Education)                   -->
+<!-- ============================================== -->
+<section class="block" id="experience">
+  <header>
+    <span class="num">§ 03</span>
+    <h2 data-i18n-en="Experience" data-i18n-zh="履历">Experience<em data-i18n-en="Work &amp; education" data-i18n-zh="工作与教育">Work &amp; education</em></h2>
+  </header>
+  <div class="reveal">
+    <h3 style="font-family:var(--mono);font-size:11px;font-weight:500;color:var(--ink-mute);letter-spacing:.12em;text-transform:uppercase;margin:0 0 18px;" data-i18n-en="Work" data-i18n-zh="工作经历">Work</h3>
+    <div class="timeline" style="margin-bottom:36px;">
+      <div class="tl-item">
+        <div class="tl-date">2025.07 — 2026.04</div>
+        <div class="tl-body">
+          <h3 data-i18n-en="Research Assistant" data-i18n-zh="研究助理">Research Assistant</h3>
+          <div class="institution" data-i18n-en-html='<a href="https://cs.cqu.edu.cn/index.htm" target="_blank" rel="noopener">College of Computer Science, Chongqing University</a>' data-i18n-zh-html='<a href="https://cs.cqu.edu.cn/index.htm" target="_blank" rel="noopener">重庆大学 · 计算机学院</a>'>
+            <a href="https://cs.cqu.edu.cn/index.htm" target="_blank" rel="noopener">College of Computer Science, Chongqing University</a>
+          </div>
+          <p data-i18n-en-html='Host: Prof. <a href="https://scholar.google.com/citations?user=TICo9iQAAAAJ&hl=zh-CN" target="_blank" rel="noopener">Fulin Luo</a>' data-i18n-zh-html='合作导师：<a href="https://scholar.google.com/citations?user=TICo9iQAAAAJ&hl=zh-CN" target="_blank" rel="noopener">罗甫林</a> 教授'>
+            Host: Prof. <a href="https://scholar.google.com/citations?user=TICo9iQAAAAJ&hl=zh-CN" target="_blank" rel="noopener">Fulin Luo</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <h3 style="font-family:var(--mono);font-size:11px;font-weight:500;color:var(--ink-mute);letter-spacing:.12em;text-transform:uppercase;margin:0 0 18px;" data-i18n-en="Education" data-i18n-zh="教育经历">Education</h3>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-date">2022.09 — 2025.06</div>
+        <div class="tl-body">
+          <h3 data-i18n-en="M.Eng. in Computer Technology" data-i18n-zh="计算机技术 · 工程硕士">M.Eng. in Computer Technology</h3>
+          <div class="institution" data-i18n-en-html='<a href="https://cs.cqu.edu.cn/index.htm" target="_blank" rel="noopener">College of Computer Science, Chongqing University</a>' data-i18n-zh-html='<a href="https://cs.cqu.edu.cn/index.htm" target="_blank" rel="noopener">重庆大学 · 计算机学院</a>'>
+            <a href="https://cs.cqu.edu.cn/index.htm" target="_blank" rel="noopener">College of Computer Science, Chongqing University</a>
+          </div>
+          <p data-i18n-en-html='Supervisor: Prof. <a href="https://scholar.google.com/citations?user=TICo9iQAAAAJ&hl=zh-CN" target="_blank" rel="noopener">Fulin Luo</a>' data-i18n-zh-html='导师：<a href="https://scholar.google.com/citations?user=TICo9iQAAAAJ&hl=zh-CN" target="_blank" rel="noopener">罗甫林</a> 教授'>
+            Supervisor: Prof. <a href="https://scholar.google.com/citations?user=TICo9iQAAAAJ&hl=zh-CN" target="_blank" rel="noopener">Fulin Luo</a>
+          </p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">2018.09 — 2022.06</div>
+        <div class="tl-body">
+          <h3 data-i18n-en="B.Eng. in Civil Engineering" data-i18n-zh="土木工程 · 工学学士">B.Eng. in Civil Engineering</h3>
+          <div class="institution" data-i18n-en-html='<a href="https://tmjz.gxu.edu.cn/" target="_blank" rel="noopener">School of Civil Engineering and Architecture, Guangxi University</a>' data-i18n-zh-html='<a href="https://tmjz.gxu.edu.cn/" target="_blank" rel="noopener">广西大学 · 土木建筑工程学院</a>'>
+            <a href="https://tmjz.gxu.edu.cn/" target="_blank" rel="noopener">School of Civil Engineering and Architecture, Guangxi University</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================== -->
+<!-- HONORS                                          -->
+<!-- ============================================== -->
+<section class="block" id="honors">
+  <header>
+    <span class="num">§ 04</span>
+    <h2 data-i18n-en="Honors" data-i18n-zh="荣誉">Honors<em data-i18n-en="Awards &amp; recognition" data-i18n-zh="奖项与荣誉">Awards &amp; recognition</em></h2>
+  </header>
+  <div class="timeline reveal">
+    <div class="tl-item">
+      <div class="tl-date">2022.06</div>
+      <div class="tl-body">
+        <h3 data-i18n-en="Outstanding Graduate" data-i18n-zh="优秀毕业生">Outstanding Graduate</h3>
+        <div class="institution" data-i18n-en="Guangxi University" data-i18n-zh="广西大学">Guangxi University</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-date">2019.09</div>
+      <div class="tl-body">
+        <h3 data-i18n-en="First Prize (Provincial) — 11th Chinese Mathematics Competition for College Students" data-i18n-zh="第十一届全国大学生数学竞赛 · 省级一等奖">First Prize (Provincial) — 11th Chinese Mathematics Competition for College Students</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================== -->
+<!-- SERVICE                                         -->
+<!-- ============================================== -->
+<section class="block" id="services">
+  <header>
+    <span class="num">§ 05</span>
+    <h2 data-i18n-en="Service" data-i18n-zh="学术服务">Service<em data-i18n-en="Community contributions" data-i18n-zh="社区贡献">Community contributions</em></h2>
+  </header>
+  <div class="svc reveal">
+    <div>
+      <h3 data-i18n-en="Conference Reviewer" data-i18n-zh="会议审稿人">Conference Reviewer</h3>
+      <ul>
+        <li><span class="conf">ICML</span><span class="years">2025</span></li>
+        <li><span class="conf">NeurIPS</span><span class="years">2024 · 2025</span></li>
+        <li><span class="conf">ICLR</span><span class="years">2025</span></li>
+        <li><span class="conf">AAAI</span><span class="years">2024</span></li>
+      </ul>
+    </div>
+    <div>
+      <h3 data-i18n-en="Memberships" data-i18n-zh="学会成员">Memberships</h3>
+      <ul>
+        <li><span class="conf">IEEE</span><span class="years" data-i18n-en="Graduate Student Member" data-i18n-zh="研究生会员">Graduate Student Member</span></li>
+        <li><span class="conf">IEEE GRSS</span><span class="years" data-i18n-en="Student Member" data-i18n-zh="学生会员">Student Member</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================== -->
+<!-- FOOTER                                          -->
+<!-- ============================================== -->
+<footer>
+  <div>© 2025 Xi Chen · <span data-i18n-en="Built with care in Chongqing" data-i18n-zh="用心制作于重庆">Built with care in Chongqing</span></div>
+  <div><a href="#top" data-i18n-en="Back to top ↑" data-i18n-zh="回到顶部 ↑">Back to top ↑</a></div>
+</footer>
+
+</div><!-- /wrap -->
+
+<!-- ============================================== -->
+<!-- TWEAKS PANEL                                    -->
+<!-- ============================================== -->
+<div id="tweaks">
+  <h4>Tweaks <span style="cursor:pointer" id="tweaks-close">×</span></h4>
+  <div class="row">
+    <label>Accent palette</label>
+    <div class="opts" id="palette-opts">
+      <button class="opt swatch" data-val="default" style="background:#9a3a2e" title="Terracotta"></button>
+      <button class="opt swatch" data-val="indigo"  style="background:#2f4a7a" title="Indigo"></button>
+      <button class="opt swatch" data-val="forest"  style="background:#3d5a3a" title="Forest"></button>
+      <button class="opt swatch" data-val="plum"    style="background:#5a3658" title="Plum"></button>
+      <button class="opt swatch" data-val="ink"     style="background:#1f1a15" title="Ink"></button>
+    </div>
+  </div>
+  <div class="row">
+    <label>Display type</label>
+    <div class="opts" id="type-opts">
+      <button class="opt" data-val="default">Serif</button>
+      <button class="opt" data-val="modern">Sans</button>
+      <button class="opt" data-val="mono">Mono</button>
+    </div>
+  </div>
+  <div class="row">
+    <label>Theme</label>
+    <div class="opts" id="theme-opts">
+      <button class="opt" data-val="light">Light</button>
+      <button class="opt" data-val="dark">Dark</button>
+    </div>
+  </div>
+  <div class="row">
+    <label>Language</label>
+    <div class="opts" id="lang-opts">
+      <button class="opt" data-val="en">English</button>
+      <button class="opt" data-val="zh">中文</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  // ======================================================
+  // TWEAK DEFAULTS (editable from toolbar)
+  // ======================================================
+  const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+    "palette": "default",
+    "type": "default",
+    "theme": "light",
+    "lang": "en"
+  }/*EDITMODE-END*/;
+
+  const state = {...TWEAK_DEFAULTS};
+  // restore from localStorage so user-facing preview keeps settings
+  try {
+    const saved = JSON.parse(localStorage.getItem('xc_tweaks') || '{}');
+    Object.assign(state, saved);
+  } catch(e) {}
+
+  function applyAll() {
+    document.documentElement.setAttribute('data-palette', state.palette);
+    document.documentElement.setAttribute('data-type', state.type);
+    document.documentElement.setAttribute('data-theme', state.theme);
+    applyLang(state.lang);
+
+    // highlight correct buttons
+    for (const group of ['palette','type','theme','lang']) {
+      const opts = document.querySelectorAll('#'+group+'-opts .opt');
+      opts.forEach(o => o.classList.toggle('on', o.dataset.val === state[group]));
+    }
+    localStorage.setItem('xc_tweaks', JSON.stringify(state));
+  }
+
+  function setTweak(key, val) {
+    state[key] = val;
+    applyAll();
+    if (window.parent !== window) {
+      window.parent.postMessage({type:'__edit_mode_set_keys', edits:{[key]: val}}, '*');
+    }
+  }
+
+  // Language
+  function applyLang(l) {
+    document.documentElement.lang = l === 'zh' ? 'zh-CN' : 'en';
+    document.querySelectorAll('[data-i18n-en]').forEach(el => {
+      const v = el.getAttribute('data-i18n-' + l);
+      if (v) el.textContent = v;
+    });
+    document.querySelectorAll('[data-i18n-en-html]').forEach(el => {
+      const v = el.getAttribute('data-i18n-' + l + '-html');
+      if (v) el.innerHTML = v;
+    });
+    document.getElementById('lang-btn').textContent = l === 'zh' ? '中' : 'EN';
+  }
+
+  // Theme toggle
+  document.getElementById('theme-btn').addEventListener('click', () => {
+    setTweak('theme', state.theme === 'dark' ? 'light' : 'dark');
+  });
+  document.getElementById('lang-btn').addEventListener('click', () => {
+    setTweak('lang', state.lang === 'zh' ? 'en' : 'zh');
+  });
+
+  // Tweaks panel
+  const panel = document.getElementById('tweaks');
+  document.getElementById('tweak-btn').addEventListener('click', () => panel.classList.toggle('open'));
+  document.getElementById('tweaks-close').addEventListener('click', () => panel.classList.remove('open'));
+  ['palette','type','theme','lang'].forEach(group => {
+    document.querySelectorAll('#'+group+'-opts .opt').forEach(btn => {
+      btn.addEventListener('click', () => setTweak(group, btn.dataset.val));
+    });
+  });
+
+  // ======================================================
+  // EDIT MODE (tweak toolbar integration)
+  // ======================================================
+  window.addEventListener('message', (e) => {
+    if (!e.data) return;
+    if (e.data.type === '__activate_edit_mode') panel.classList.add('open');
+    if (e.data.type === '__deactivate_edit_mode') panel.classList.remove('open');
+  });
+  if (window.parent !== window) {
+    window.parent.postMessage({type:'__edit_mode_available'}, '*');
+  }
+
+  // ======================================================
+  // REVEAL ON SCROLL
+  // ======================================================
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(en => { if (en.isIntersecting) en.target.classList.add('in'); });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // ======================================================
+  // BIBTEX COPY
+  // ======================================================
+  const BIB = {
+    tcsvt25: "@article{chen2025tcsvt,\n  title={Hyperspectral Image Reconstruction},\n  author={Chen, Xi and Luo, Fulin and others},\n  journal={IEEE Transactions on Circuits and Systems for Video Technology},\n  year={2025}\n}",
+    tip25:   "@article{chen2025tip,\n  title={Hyperspectral Image Reconstruction},\n  author={Chen, Xi and Luo, Fulin and others},\n  journal={IEEE Transactions on Image Processing},\n  year={2025}\n}",
+    aaai24:  "@inproceedings{chen2024aaai,\n  title={Hyperspectral Image Reconstruction},\n  author={Chen, Xi and Luo, Fulin and others},\n  booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},\n  year={2024}\n}"
+  };
+  window.copyBib = function(key) {
+    if (!BIB[key]) return;
+    navigator.clipboard.writeText(BIB[key]).then(() => {
+      const btn = event.target;
+      const orig = btn.textContent;
+      btn.textContent = 'Copied ✓';
+      setTimeout(() => btn.textContent = orig, 1400);
+    });
+  }
+
+  // ======================================================
+  // INIT
+  // ======================================================
+  applyAll();
+
+  // Smooth scroll for internal nav
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', (e) => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        const top = target.getBoundingClientRect().top + window.pageYOffset - 70;
+        window.scrollTo({ top, behavior: 'smooth' });
+      }
+    });
+  });
+</script>
+</body>
+</html>

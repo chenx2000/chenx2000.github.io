@@ -4,8 +4,12 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Xi Chen — 陈曦</title>
-<link rel="icon" href="images/favicon.ico" />
-<link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+<link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="192x192" href="images/android-chrome-192x192.png" />
+<link rel="icon" type="image/png" sizes="512x512" href="images/android-chrome-512x512.png" />
 <meta name="description" content="Xi Chen (陈曦) — researcher in hyperspectral image reconstruction, computational imaging, and remote sensing." />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -433,7 +437,41 @@
     color: var(--ink-mute);
     font-size: 16px;
     margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
   }
+  .tl-body .institution > a {
+    flex: 0 1 auto;
+    min-width: 0;
+    align-self: center;
+  }
+  .tl-body .institution a { border-bottom: 1px solid var(--rule); }
+  .tl-body .institution a:hover { border-bottom-color: var(--accent); }
+
+  /* Institution crest — circular logo, sits on the right */
+  .crest {
+    flex: 0 0 auto;
+    order: 2;
+    margin-left: auto;
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    background: #fff;
+    border: 1px solid var(--rule);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,.06);
+  }
+  .crest img {
+    width: 86%;
+    height: 86%;
+    object-fit: contain;
+    display: block;
+  }
+  html[data-theme="dark"] .crest { background: #f4ecdc; border-color: #4a3f30; }
   .tl-body p {
     font-size: 16px;
     color: var(--ink-soft);
@@ -624,11 +662,11 @@
 
   <aside class="card">
     <div class="portrait">
-      <img src="images/XiChen-new.jpg" alt="Portrait of Xi Chen" />
+      <img src="images/XiChen-2026.jpg" alt="Portrait of Xi Chen" />
     </div>
     <div class="contact">
-      <div><span class="label">Email</span><a href="mailto:chenxi2000cd@gmail.com">chenxi2000cd@gmail.com</a></div>
-      <div><span class="label">Based</span>Chongqing, China</div>
+      <div><span class="label">Email</span><a href="/cdn-cgi/l/email-protection#42212a272c3a2b70727272212602252f232b2e6c212d2f"><span class="__cf_email__" data-cfemail="c9aaa1aca7b1a0fbf9f9f9aaad89aea4a8a0a5e7aaa6a4">[email&#160;protected]</span></a></div>
+      <div><span class="label">Based</span>Hong Kong SAR, China</div>
     </div>
     <div class="links-row">
       <a href="https://scholar.google.com/citations?user=z5pV7koAAAAJ&hl=zh-CN" target="_blank" rel="noopener" title="Google Scholar">
@@ -665,7 +703,7 @@
   </header>
   <div class="news reveal">
     <div class="news-item">
-      <div class="news-date">Jul 2025</div>
+      <div class="news-date">Aug 2025</div>
       <div class="news-body"><span class="tag">Paper</span><span data-i18n-en="Our paper on hyperspectral image reconstruction is accepted by IEEE TCSVT." data-i18n-zh="我们关于高光谱图像重建的论文被 IEEE TCSVT 接收。">Our paper on hyperspectral image reconstruction is accepted by <em>IEEE TCSVT</em>.</span></div>
     </div>
     <div class="news-item">
@@ -742,10 +780,24 @@
     <h3 style="font-family:var(--mono);font-size:11px;font-weight:500;color:var(--ink-mute);letter-spacing:.12em;text-transform:uppercase;margin:0 0 18px;" data-i18n-en="Work" data-i18n-zh="工作经历">Work</h3>
     <div class="timeline" style="margin-bottom:36px;">
       <div class="tl-item">
+        <div class="tl-date">2026.05 — Present</div>
+        <div class="tl-body">
+          <h3 data-i18n-en="Research Assistant" data-i18n-zh="研究助理">Research Assistant</h3>
+          <div class="institution" data-i18n-en-html='<span class="crest"><img src="images/polyu-logo.png" alt="PolyU"></span><a href="https://rcaig.com/" target="_blank" rel="noopener">Research Centre for Artificial Intelligence in Geomatics, The Hong Kong Polytechnic University</a>' data-i18n-zh-html='<span class="crest"><img src="images/polyu-logo.png" alt="PolyU"></span><a href="https://rcaig.com/" target="_blank" rel="noopener">香港理工大学 · 测绘人工智能研究中心</a>'>
+            <span class="crest"><img src="images/polyu-logo.png" alt="PolyU"></span>
+            <a href="https://rcaig.com/" target="_blank" rel="noopener">Research Centre for Artificial Intelligence in Geomatics, The Hong Kong Polytechnic University</a>
+          </div>
+          <p data-i18n-en-html='Host: Prof. <a href="https://qihaoweng.net/" target="_blank" rel="noopener">Qihao Weng</a>' data-i18n-zh-html='合作导师：<a href="https://qihaoweng.net/" target="_blank" rel="noopener">翁齐浩</a> 教授'>
+            Host: Prof. <a href="https://qihaoweng.net/" target="_blank" rel="noopener">Qihao Weng</a>
+          </p>
+        </div>
+      </div>
+      <div class="tl-item">
         <div class="tl-date">2025.07 — 2026.04</div>
         <div class="tl-body">
           <h3 data-i18n-en="Research Assistant" data-i18n-zh="研究助理">Research Assistant</h3>
-          <div class="institution" data-i18n-en-html='<a href="https://cs.cqu.edu.cn/index.htm" target="_blank" rel="noopener">College of Computer Science, Chongqing University</a>' data-i18n-zh-html='<a href="https://cs.cqu.edu.cn/index.htm" target="_blank" rel="noopener">重庆大学 · 计算机学院</a>'>
+          <div class="institution" data-i18n-en-html='<span class="crest"><img src="images/cqu-logo.png" alt="CQU"></span><a href="https://cs.cqu.edu.cn/index.htm" target="_blank" rel="noopener">College of Computer Science, Chongqing University</a>' data-i18n-zh-html='<span class="crest"><img src="images/cqu-logo.png" alt="CQU"></span><a href="https://cs.cqu.edu.cn/index.htm" target="_blank" rel="noopener">重庆大学 · 计算机学院</a>'>
+            <span class="crest"><img src="images/cqu-logo.png" alt="CQU"></span>
             <a href="https://cs.cqu.edu.cn/index.htm" target="_blank" rel="noopener">College of Computer Science, Chongqing University</a>
           </div>
           <p data-i18n-en-html='Host: Prof. <a href="https://scholar.google.com/citations?user=TICo9iQAAAAJ&hl=zh-CN" target="_blank" rel="noopener">Fulin Luo</a>' data-i18n-zh-html='合作导师：<a href="https://scholar.google.com/citations?user=TICo9iQAAAAJ&hl=zh-CN" target="_blank" rel="noopener">罗甫林</a> 教授'>
@@ -761,7 +813,8 @@
         <div class="tl-date">2022.09 — 2025.06</div>
         <div class="tl-body">
           <h3 data-i18n-en="M.Eng. in Computer Technology" data-i18n-zh="计算机技术 · 工程硕士">M.Eng. in Computer Technology</h3>
-          <div class="institution" data-i18n-en-html='<a href="https://cs.cqu.edu.cn/index.htm" target="_blank" rel="noopener">College of Computer Science, Chongqing University</a>' data-i18n-zh-html='<a href="https://cs.cqu.edu.cn/index.htm" target="_blank" rel="noopener">重庆大学 · 计算机学院</a>'>
+          <div class="institution" data-i18n-en-html='<span class="crest"><img src="images/cqu-logo.png" alt="CQU"></span><a href="https://cs.cqu.edu.cn/index.htm" target="_blank" rel="noopener">College of Computer Science, Chongqing University</a>' data-i18n-zh-html='<span class="crest"><img src="images/cqu-logo.png" alt="CQU"></span><a href="https://cs.cqu.edu.cn/index.htm" target="_blank" rel="noopener">重庆大学 · 计算机学院</a>'>
+            <span class="crest"><img src="images/cqu-logo.png" alt="CQU"></span>
             <a href="https://cs.cqu.edu.cn/index.htm" target="_blank" rel="noopener">College of Computer Science, Chongqing University</a>
           </div>
           <p data-i18n-en-html='Supervisor: Prof. <a href="https://scholar.google.com/citations?user=TICo9iQAAAAJ&hl=zh-CN" target="_blank" rel="noopener">Fulin Luo</a>' data-i18n-zh-html='导师：<a href="https://scholar.google.com/citations?user=TICo9iQAAAAJ&hl=zh-CN" target="_blank" rel="noopener">罗甫林</a> 教授'>
@@ -773,7 +826,8 @@
         <div class="tl-date">2018.09 — 2022.06</div>
         <div class="tl-body">
           <h3 data-i18n-en="B.Eng. in Civil Engineering" data-i18n-zh="土木工程 · 工学学士">B.Eng. in Civil Engineering</h3>
-          <div class="institution" data-i18n-en-html='<a href="https://tmjz.gxu.edu.cn/" target="_blank" rel="noopener">School of Civil Engineering and Architecture, Guangxi University</a>' data-i18n-zh-html='<a href="https://tmjz.gxu.edu.cn/" target="_blank" rel="noopener">广西大学 · 土木建筑工程学院</a>'>
+          <div class="institution" data-i18n-en-html='<span class="crest"><img src="images/gxu-logo.png" alt="GXU"></span><a href="https://tmjz.gxu.edu.cn/" target="_blank" rel="noopener">School of Civil Engineering and Architecture, Guangxi University</a>' data-i18n-zh-html='<span class="crest"><img src="images/gxu-logo.png" alt="GXU"></span><a href="https://tmjz.gxu.edu.cn/" target="_blank" rel="noopener">广西大学 · 土木建筑工程学院</a>'>
+            <span class="crest"><img src="images/gxu-logo.png" alt="GXU"></span>
             <a href="https://tmjz.gxu.edu.cn/" target="_blank" rel="noopener">School of Civil Engineering and Architecture, Guangxi University</a>
           </div>
         </div>
@@ -820,7 +874,7 @@
       <h3 data-i18n-en="Conference Reviewer" data-i18n-zh="会议审稿人">Conference Reviewer</h3>
       <ul>
         <li><span class="conf">ICML</span><span class="years">2025</span></li>
-        <li><span class="conf">NeurIPS</span><span class="years">2024 · 2025</span></li>
+        <li><span class="conf">NeurIPS</span><span class="years">2024 · 2025 · 2026</span></li>
         <li><span class="conf">ICLR</span><span class="years">2025</span></li>
         <li><span class="conf">AAAI</span><span class="years">2024</span></li>
       </ul>
@@ -884,7 +938,7 @@
   </div>
 </div>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   // ======================================================
   // TWEAK DEFAULTS (editable from toolbar)
   // ======================================================
